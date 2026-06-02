@@ -1,36 +1,303 @@
 ```html
-<div class="card">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2>Sistema de Registro por Código QR</h2>
+<title>Nevera Inteligente</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#08152e,#102b63);
+    color:white;
+}
+
+/* PORTADA */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:70px;
+    color:#D4AF37;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(212,175,55,.5);
+}
+
+.hero p{
+    font-size:22px;
+    max-width:850px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    background:#D4AF37;
+    color:#08152e;
+    padding:16px 45px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:#FFD700;
+    box-shadow:0 0 20px rgba(212,175,55,.6);
+}
+
+/* CONTENIDO */
+
+.contenido{
+    display:none;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:50px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border:2px solid #D4AF37;
+    border-radius:20px;
+    padding:35px;
+    margin-bottom:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(212,175,55,.25);
+}
+
+.card h2{
+    color:#D4AF37;
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.card p{
+    font-size:18px;
+    line-height:1.9;
+}
+
+ul{
+    margin-left:25px;
+}
+
+li{
+    margin-bottom:12px;
+    font-size:18px;
+}
+
+/* TECNOLOGÍAS */
+
+.tec-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.tec{
+    background:#0b1e46;
+    border:2px solid #D4AF37;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    color:#D4AF37;
+    font-weight:600;
+    transition:.3s;
+}
+
+.tec:hover{
+    background:#D4AF37;
+    color:#08152e;
+    transform:scale(1.05);
+}
+
+/* OBJETIVOS */
+
+.objetivo{
+    text-align:center;
+    font-size:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#D4AF37;
+    color:#08152e;
+    text-align:center;
+    padding:25px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.card h2{
+    font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <h1>Nevera Inteligente</h1>
 
     <p>
-        Cada alimento recibe un código QR único. Al escanearlo,
-        la Nevera Inteligente registra automáticamente:
+        Proyecto tecnológico diseñado para reducir el desperdicio de alimentos,
+        optimizar la conservación de productos perecederos y fortalecer la
+        seguridad alimentaria en jardines infantiles de Bogotá.
     </p>
 
-    <br>
+    <button class="btn" onclick="mostrarInfo()">
+        Conocer Proyecto
+    </button>
 
-    <ul>
-        <li>Nombre del producto.</li>
-        <li>Fecha de ingreso.</li>
-        <li>Fecha de vencimiento.</li>
-        <li>Cantidad almacenada.</li>
-        <li>Ubicación dentro de la nevera.</li>
-    </ul>
+</section>
 
-    <br>
+<section class="contenido" id="contenido">
 
-    <div style="text-align:center">
+    <div class="card">
+        <h2>Sobre el Proyecto</h2>
 
-        <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=NeveraInteligente"
-        alt="Código QR">
+        <p>
+            La Nevera Inteligente es una solución tecnológica creada para
+            monitorear alimentos almacenados mediante sensores, conexión WiFi,
+            inteligencia artificial y sistemas de identificación automática.
+        </p>
 
-        <p style="margin-top:15px;">
-            Escanea el código para acceder al sistema.
+        <br>
+
+        <p>
+            Su propósito es garantizar que los alimentos se mantengan en óptimas
+            condiciones para el consumo infantil, reduciendo pérdidas económicas
+            y riesgos sanitarios.
+        </p>
+    </div>
+
+    <div class="card">
+
+        <h2>Problemáticas que Soluciona</h2>
+
+        <ul>
+            <li>Desperdicio de alimentos.</li>
+            <li>Productos vencidos.</li>
+            <li>Mala refrigeración.</li>
+            <li>Pérdidas económicas.</li>
+            <li>Enfermedades alimentarias.</li>
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Beneficios</h2>
+
+        <ul>
+            <li>Protección de la salud infantil.</li>
+            <li>Control inteligente del inventario.</li>
+            <li>Menor desperdicio de alimentos.</li>
+            <li>Mayor organización y eficiencia.</li>
+            <li>Apoyo a jardines infantiles y comedores escolares.</li>
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Innovación y Tecnología</h2>
+
+        <div class="tec-grid">
+
+            <div class="tec">Arduino y Sensores</div>
+
+            <div class="tec">Escáner de Código de Barras</div>
+
+            <div class="tec">Monitoreo de Temperatura</div>
+
+            <div class="tec">Alertas en Tiempo Real</div>
+
+            <div class="tec">Inteligencia Artificial</div>
+
+            <div class="tec">Conectividad WiFi</div>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Nuestro Objetivo</h2>
+
+        <p class="objetivo">
+            Desarrollar una herramienta accesible y moderna que permita mejorar
+            la conservación de alimentos, optimizar recursos y contribuir a una
+            alimentación más segura para los niños.
         </p>
 
     </div>
 
-</div>
+</section>
+
+<footer>
+    © 2026 - Proyecto Nevera Inteligente
+</footer>
+
+<script>
+
+function mostrarInfo(){
+
+    document.getElementById("contenido").style.display="block";
+
+    window.scrollTo({
+        top:window.innerHeight,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
 ```
+
